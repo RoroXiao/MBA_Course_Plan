@@ -276,7 +276,7 @@
   <div class="head-main">
     <h1>HKU Business School · 2026/27 Full-time MBA Course Calendar</h1>
     <div class="sub">All <b>required courses</b> are auto-placed on the calendar. Add electives from the right panel — conflicts are detected automatically.</div>
-    <div class="attribution">Designed by GLM-5.2 &amp; ZCode · Rosheen Xiao · Updated as of 13 August 2026</div>
+    <div class="attribution">Designed by GLM-5.2 &amp; ZCode · Rosheen Xiao · Updated as of 6 October 2026</div>
   </div>
   <div class="head-actions">
     <button type="button" class="head-btn" id="exportICS" title="Download an Outlook-importable .ics calendar of your whole schedule">📅 Export .ics</button>
@@ -345,14 +345,14 @@
 
 <footer>
   <b>Data sources:</b><br>
-  1. HKU Business School — <i>"2026/2027 Full-time MBA Teaching Plan"</i> (Updated 13-08-2026) — full required + elective schedule.<br>
+  1. HKU Business School — <i>"2026/2027 Full-time MBA Teaching Plan"</i> (Updated 06-10-2026) — full required + elective schedule.<br>
   2. MBA Intranet — <i>"Registration for MBA Elective Courses delivering in Aug-Dec 2026 (Modules 1–3)"</i> (Registration Period: Aug 12–18, 2026; bidding system with token wallet) — Module 1–3 elective venues (tentative).<br>
   <br>
   <b>Venue codes:</b> TC = Admiralty Town Centre · CP = Cyberport Campus · MC = Pok Fu Lam Main Campus · SZ = HKU Shenzhen Centre · TBC = to be confirmed. Venues for Module 4–8 electives and required courses are TBC (announced in late Nov 2026). Venue is subject to change.<br>
   <br>
   Conflict detection is automated from the published schedule and is indicative only — <b>verify final class times and venues against the official MBA Intranet notices</b>.<br>
   <br>
-  Designed by GLM-5.2 &amp; ZCode · Rosheen Xiao · Updated as of 13 August 2026
+  Designed by GLM-5.2 &amp; ZCode · Rosheen Xiao · Updated as of 6 October 2026
 </footer>
 
 <script>
@@ -375,21 +375,34 @@ const REQS=[
        {y:2026,m:12,d:8, start:18*60+30, end:21*60+30, label:"CF Summative Assessment"},
        {y:2026,m:12,d:9, start:9*60+30, end:12*60+30, label:"CF Summative Assessment"},
      ]},
-  {code:"PMBA6011", title:"Competitive Strategy", inst:"Prof. Wouter Dessein", day:"Tue + Thu", time:"2:00pm - 5:15pm", dates:"Oct 6, 8, 13, 15, 20, 22, 27, 29, Nov 3, 5", y:2026, venues:["TBC"]},
+  {code:"PMBA6011", title:"Competitive Strategy", inst:"Prof. Wouter Dessein", day:"Tue + Thu", time:"2:00pm - 5:15pm", dates:"Oct 6, 8, 13, 15, 20, 22, 27, 29, Nov 3, 5", y:2026, venues:["TBC"], note:"Nov 5 is the exam · revised Sep 24"},
   {code:"PMBA6097", title:"Managing Digital Innovation", inst:"Prof. Yulin Fang", day:"Wed", time:"9:30am - 5:00pm", dates:"Oct 7, 14, 21, 28, Nov 4", y:2026, venues:["TBC"]},
   {code:"PMBA6096", title:"Ethics and ESG: Building Sustainable Businesses", inst:"Prof. David Bishop", day:"Mon + Wed", time:"9:30am - 12:45pm", dates:"Nov 9, 11, 16, 18, 23, 25, 30, Dec 2, 7, 14", y:2026, venues:["TBC"]},
   {code:"PMBA6093", title:"Analytics for Managers", inst:"Prof. Weiming Zhu", day:"Tue + Thu", time:"9:30am - 12:45pm", dates:"Nov 10, 12, 17, 19, 24, 26, Dec 1, 3, 10, 15", y:2026, venues:["TBC"]},
   {code:"PMBA6099-CD", title:"Executive Development Workshop (III) Problem Solving & Critical Thinking, (IV) Leadership Presence & Personal Brand", inst:"Prof. David Lee", day:"Wed", time:"9:30am - 6:30pm", dates:"Dec 16", y:2026, venues:["TBC"]},
-  {code:"PMBA6094", title:"Macroeconomics: Global Perspective", inst:"Prof. Heiwai Tang", day:"Mon", time:"9:30am - 5:00pm", dates:"Jan 4, 11, 18, 25, Feb 1", y:2027, venues:["TBC"]},
+  {code:"PMBA6094", title:"Macroeconomics: Global Perspective", inst:"Prof. Heiwai Tang", day:"Mon", time:"9:30am - 5:00pm", dates:"Jan 11, 18, 20 (Wed), 25, Feb 1", y:2027, venues:["TBC"], note:"Jan 4 cancelled; Jan 20 (Wed) added · revised Sep 9"},
   {code:"PMBA6098", title:"Marketing Strategy", inst:"Prof. Jinzhao Du", day:"Tue", time:"9:30am - 5:00pm", dates:"Jan 5, 12, 19, 26, Feb 2", y:2027, venues:["TBC"]},
-  {code:"PMBA6068", title:"Capstone Project", inst:"Prof. Jin Li", day:"Thu", time:"9:30am - 5:00pm", dates:"Jan 7, 13 (Wed), 21, 28, Feb 4", y:2027, venues:["TBC"], note:"Jan 13 is a Wednesday"},
-  {code:"CF-Tutorial", title:"CF Optional Finance Tutorial", inst:"Mr. Clive Ho", day:"TBC", time:"TBC", dates:"", y:2026, venues:["TBC"], exclude:true, note:"Time TBC"},
+  {code:"PMBA6068", title:"Capstone Project", inst:"Prof. Jin Li", day:"Wed + Fri", time:"9:30am - 5:00pm", dates:"Dec 17 (Thu), Jan 22, 27, 29, Feb 3", y:2026, venues:["TBC"], note:"Old Thu slot (Jan 7, 13, 21, 28, Feb 4) cancelled; moved to Wed + Fri · revised Oct 6"},
+  {code:"CF-Tutorial", title:"CF Optional Finance Tutorial", inst:"Mr. Clive Ho", day:"Mon / Tue / Thu", time:"Mon 10am-12pm · Tue 8-10pm · Thu varies", dates:"", y:2026, venues:["TBC"],
+     note:"Schedule added Sep 9 — 9 sessions at various times (see calendar)",
+     datesDisplay:"Oct 5, 15, 20, 27 · Nov 2, 10, 16, 26 · Dec 3 (times vary)",
+     extraSessions:[
+       {y:2026,m:10,d:5,  start:10*60,      end:12*60,      label:"CF Tutorial"},
+       {y:2026,m:11,d:2,  start:10*60,      end:12*60,      label:"CF Tutorial"},
+       {y:2026,m:11,d:16, start:20*60,      end:22*60,      label:"CF Tutorial"},
+       {y:2026,m:10,d:20, start:20*60,      end:22*60,      label:"CF Tutorial"},
+       {y:2026,m:10,d:27, start:20*60,      end:22*60,      label:"CF Tutorial"},
+       {y:2026,m:11,d:10, start:20*60,      end:22*60,      label:"CF Tutorial"},
+       {y:2026,m:10,d:15, start:10*60,      end:12*60,      label:"CF Tutorial"},
+       {y:2026,m:11,d:26, start:18*60,      end:20*60,      label:"CF Tutorial"},
+       {y:2026,m:12,d:3,  start:14*60,      end:16*60,      label:"CF Tutorial"},
+     ]},
 ];
 
 const ELECS=[
   // Module 1 — venues from MBA Intranet Elective Registration PDF (Tentative)
   {mod:1,code:"PMBA6104",title:"Entrepreneurial Incubation Lab",inst:"Prof. Jack Poon",day:"Sat",time:"9:30am - 5:00pm",dates:"Aug 22, 29, Sep 5, 12, 19, 26",y:2026,venues:["TC","MC"],note:"Sep 12 & 19 run 2:00-5:15pm"},
-  {mod:1,code:"PMBA6119",title:"Leadership Development in the Chinese Classics",inst:"Dr. Elizabeth Woo Li",day:"Sat",time:"9:30am - 5:00pm",dates:"Aug 22, 29, Sep 5, 12, Oct 11 (Sun)",y:2026,venues:["TC","MC"]},
+  {mod:1,code:"PMBA6119",title:"Leadership Development in the Chinese Classics",inst:"Dr. Elizabeth Woo Li",day:"Sat",time:"9:30am - 5:00pm",dates:"Aug 22, 29, Sep 5, 12, Oct 11 (Sun)",y:2026,venues:["TC","MC"],exclude:true,note:"Withdrawn from the Oct 6 teaching plan"},
   {mod:1,code:"PMBA6100",title:"Decoding Branding in the AI Era",inst:"Dr. Royce Yuen",day:"Mon + Wed",time:"6:30pm - 9:45pm",dates:"Aug 24, 26, 31, Sep 2, 7, 14, 16, 21, 23, 28",y:2026,venues:["TC"]},
   {mod:1,code:"PMBA6091",title:"Advanced Negotiation",inst:"Dr. Grace Xie",day:"Sat + Sun",time:"9:30am - 6:30pm",dates:"Aug 29, 30, Sep 12, 19",y:2026,venues:["CP","MC"]},
   {mod:1,code:"PMBA6048",title:"Venture Capital and Private Equity",inst:"Prof. Marvin Lai",day:"Sat + Sun",time:"9:30am - 6:30pm",dates:"Sep 12, 13, 19, 20",y:2026,venues:["TC","MC"]},
@@ -398,7 +411,7 @@ const ELECS=[
   {mod:2,code:"PMBA6127",title:"Doing Business in the Multipolar World",inst:"Dr. Marcus Schuetz",day:"Block",time:"9:30am - 6:30pm",dates:"Sep 30, Oct 1, 3, 4",y:2026,venues:["TBC"],note:"Oct 5 cancelled; time extended to 6:30pm · revised Aug 13"},
   {mod:2,code:"PMBA6061",title:"Artificial Intelligence and Big Data",inst:"Prof. Michael Chau",day:"Mon + Wed",time:"6:30pm - 9:45pm",dates:"Oct 5, 7, 12, 14, 21, 23 (Fri), 26, 28, Nov 4, 6 (Fri)",y:2026,venues:["TC"],note:"Some sessions on Fri evening"},
   {mod:2,code:"PMBA6016",title:"Management Consulting in the age of AI",inst:"Dr. Marcus Schuetz",day:"Sat",time:"9:30am - 5:00pm",dates:"Oct 10, 17, 24, 31, Nov 7",y:2026,venues:["TC"]},
-  {mod:2,code:"PMBA6076",title:"Mergers and Acquisitions",inst:"Prof. Matthias Buehlmaier",day:"Sat",time:"9:30am - 6:30pm",dates:"Oct 10, 17, 31, Nov 7",y:2026,venues:["MC"],prereq:"PMBA6003 Corporate Finance",note:"Oct 24 cancelled; Nov 7 added · revised Aug 13"},
+  {mod:2,code:"PMBA6076",title:"Mergers and Acquisitions",inst:"Prof. Matthias Buehlmaier",day:"Sat",time:"9:30am - 6:30pm",dates:"Oct 10, 17, 31, Nov 7",y:2026,venues:["MC"],prereq:"PMBA6003 Corporate Finance",exclude:true,note:"Withdrawn from the Oct 6 teaching plan"},
   {mod:2,code:"PMBA6129",title:"Culture and Creative Transformation: Art, Culture, Commerce Integration",inst:"Ms. Rebecca Woo & Mr. Elvis He",day:"Sat",time:"9:30am - 6:30pm",dates:"Oct 10, 17, 24, 31",y:2026,venues:["TC","MC"]},
   {mod:2,code:"PMBA6124-I",title:"Strategy in a Digital World (I)",inst:"Prof. Jeffrey Sampler",day:"Block",time:"9:30am - 6:30pm",dates:"Oct 17, 18, 19, 20",y:2026,venues:["CP","MC"]},
 
@@ -446,6 +459,7 @@ const ELECS=[
   {mod:8,code:"PMBA6045",title:"Online Business Strategy",inst:"Prof. Eric Chin",day:"Sat",time:"9:30am - 6:30pm",dates:"Jul 10, 17, 24, 31",y:2027,venues:["TBC"]},
   {mod:8,code:"PMBA6122-B",title:"Transformative Leadership and AI in Entrepreneurship (B)",inst:"Prof. Roy Liang Tan",day:"Sat + Sun",time:"9:30am - 6:30pm",dates:"Jul 17, 18, 24, 25",y:2027,venues:["TBC"],mandarin:true},
   {mod:8,code:"PMBA6027-SZB",title:"Business Valuation (SZ-B)",inst:"Prof. Xu Li",day:"Sat + Sun",time:"9:30am - 6:30pm",dates:"Jul 31, Aug 1, 7, 8",y:2027,venues:["SZ"],sz:true,mandarin:true,prereq:"PMBA6013 ABD"},
+  {mod:8,code:"PMBA6126",title:"Entrepreneurial Finance: Valuing, Financing, and Exiting Startups",inst:"Prof. Alberto Moel",day:"Tue + Thu",time:"6:30pm - 9:45pm",dates:"Jul 6, 8, 13, 15, 20, 22, 27, 29, Aug 3, 5",y:2027,venues:["TBC"],note:"New course added Aug 18"},
 ];
 
 let ALL=[];
@@ -551,8 +565,8 @@ function loadHiddenReq(){ try{return new Set(JSON.parse(localStorage.getItem(LS_
 function saveHiddenReq(){ try{localStorage.setItem(LS_KEY_REQ,JSON.stringify([...hiddenReq]));}catch(e){} }
 
 function selectedList(){
-  // Every required (non-excluded, non-hidden) + currently chosen electives
-  return ALL.filter(c=> (c.cat==='req' && !c.exclude && !hiddenReq.has(c.id)) || selectedElec.has(c.id));
+  // Every required (non-excluded, non-hidden) + currently chosen electives (withdrawn electives never render)
+  return ALL.filter(c=> (c.cat==='req' && !c.exclude && !hiddenReq.has(c.id)) || (c.cat==='elec' && !c.exclude && selectedElec.has(c.id)));
 }
 
 /* ============================================================
@@ -819,8 +833,8 @@ function renderPanel(){
     return `<div class="${cls}" data-id="${c.id}" title="Click to ${hidden?'show':'hide'} on calendar"><span class="rdot">${btn}</span><b>${escapeHtml(c.code)}</b> ${escapeHtml(c.title)} <span style="margin-left:auto;color:var(--faint)">${d}</span></div>`;
   }).join('');
 
-  // 3) Electives (filterable + addable)
-  const elec=ALL.filter(c=>c.cat==='elec').filter(passesFilter);
+  // 3) Electives (filterable + addable; withdrawn courses hidden)
+  const elec=ALL.filter(c=>c.cat==='elec' && !c.exclude).filter(passesFilter);
   // sorting: by module then by first session date
   elec.sort((a,b)=> (a.mod-b.mod) || ((a.sessions[0]?(a.sessions[0].y*10000+a.sessions[0].m*100+a.sessions[0].d):1e12) - (b.sessions[0]?(b.sessions[0].y*10000+b.sessions[0].m*100+b.sessions[0].d):1e12)));
   const selCount = ALL.filter(c=>c.cat==='elec'&&selectedElec.has(c.id)).length;
@@ -1085,7 +1099,7 @@ function renderPrintView(){
       <td>${escapeHtml(c.inst)}</td>
       <td>${escapeHtml(c.day)}<br>${escapeHtml(c.time)}</td>
       <td>${escapeHtml(venue)}</td>
-      <td class="pdates">${escapeHtml(c.dates||'TBC')}</td>
+      <td class="pdates">${escapeHtml(c.datesDisplay||c.dates||'TBC')}</td>
     </tr>`;
   }).join('');
   const conflictHtml = conf.length
@@ -1102,7 +1116,7 @@ function renderPrintView(){
     </table>
     <div class="pfoot">
       Venue codes: TC = Admiralty Town Centre · CP = Cyberport Campus · MC = Pok Fu Lam Main Campus · SZ = HKU Shenzhen Centre · TBC = to be confirmed.<br>
-      Data sources: HKU Business School "2026/2027 Full-time MBA Teaching Plan" (Updated 13-08-2026); MBA Intranet Elective Registration M1–3 (venues, tentative). Verify against official MBA Intranet notices.<br>
+      Data sources: HKU Business School "2026/2027 Full-time MBA Teaching Plan" (Updated 06-10-2026); MBA Intranet Elective Registration M1–3 (venues, tentative). Verify against official MBA Intranet notices.<br>
       Designed by GLM-5.2 &amp; ZCode · Rosheen Xiao
     </div>`;
 }
